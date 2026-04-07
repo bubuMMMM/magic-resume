@@ -249,6 +249,46 @@
       "editorial": {
         "name": "Editorial",
         "description": "Melange luxueux de typographie serif grasse et sans-serif raffinee"
+      },
+      "notion": {
+        "name": "Notion",
+        "description": "Style epure inspire de Notion avec bordures subtiles"
+      },
+      "vercel": {
+        "name": "Vercel",
+        "description": "Design moderne avec fond sombre et accents lumineux"
+      },
+      "neobrutalist": {
+        "name": "Neobrutalist",
+        "description": "Style audacieux avec bordures epaisses et ombres marquees"
+      },
+      "gradient": {
+        "name": "Degrade",
+        "description": "Arriere-plan degrade doux et moderne"
+      },
+      "terminal": {
+        "name": "Terminal",
+        "description": "Esthetique developpeur avec style terminal"
+      },
+      "magazine": {
+        "name": "Magazine",
+        "description": "Mise en page editoriale style magazine"
+      },
+      "compact": {
+        "name": "Compact",
+        "description": "Mise en page dense pour maximiser les informations"
+      },
+      "card": {
+        "name": "Cartes",
+        "description": "Sections en cartes avec ombres douces"
+      },
+      "sidebar": {
+        "name": "Barre laterale",
+        "description": "Barre laterale coloree avec contenu principal"
+      },
+      "swiss": {
+        "name": "Suisse",
+        "description": "Style typographique suisse international"
       }
     }
   },
