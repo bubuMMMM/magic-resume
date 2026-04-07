@@ -1,8 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import LandingPage from "@/app/(public)/[locale]/page";
 import { defaultLocale, locales, type Locale } from "@/i18n/config";
-import zhMessages from "@/i18n/locales/zh.json";
-import enMessages from "@/i18n/locales/en.json";
 import frMessages from "@/i18n/locales/fr.json";
 
 const SEO_BASE_URL = "https://magicv.art";
@@ -14,27 +12,23 @@ function resolveLocale(rawLocale: string): Locale {
   return defaultLocale;
 }
 
-function getLocaleSeo(locale: Locale) {
-  const messages = locale === "en" ? enMessages : locale === "fr" ? frMessages : zhMessages;
+function getLocaleSeo() {
+  const messages = frMessages;
   const title = `${messages.common.title} - ${messages.common.subtitle}`;
   const description = messages.common.description;
-  const localeTag = locale === "en" ? "en_US" : locale === "fr" ? "fr_FR" : "zh_CN";
-  const canonical = `${SEO_BASE_URL}/${locale}`;
-  const alternateLocale = locale === "zh" ? "en" : "zh";
+  const canonical = `${SEO_BASE_URL}/fr`;
 
   return {
     title,
     description,
-    localeTag,
+    localeTag: "fr_FR",
     canonical,
-    alternateLocale
   };
 }
 
 export const Route = createFileRoute("/$locale")({
-  head: ({ params }) => {
-    const locale = resolveLocale(params.locale);
-    const seo = getLocaleSeo(locale);
+  head: () => {
+    const seo = getLocaleSeo();
 
     return {
       meta: [
@@ -55,13 +49,8 @@ export const Route = createFileRoute("/$locale")({
       ],
       links: [
         { rel: "canonical", href: seo.canonical },
-        { rel: "alternate", hrefLang: locale, href: seo.canonical },
-        {
-          rel: "alternate",
-          hrefLang: seo.alternateLocale,
-          href: `${SEO_BASE_URL}/${seo.alternateLocale}`
-        },
-        { rel: "alternate", hrefLang: "x-default", href: `${SEO_BASE_URL}/zh` }
+        { rel: "alternate", hrefLang: "fr", href: seo.canonical },
+        { rel: "alternate", hrefLang: "x-default", href: `${SEO_BASE_URL}/fr` }
       ]
     };
   },

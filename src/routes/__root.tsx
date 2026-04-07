@@ -9,8 +9,6 @@ import appCss from "../app/globals.css?url";
 import appFontCss from "../app/font.css?url";
 import { NextIntlClientProvider } from "@/i18n/compat/client";
 import { useEffect } from "react";
-import zhMessages from "@/i18n/locales/zh.json";
-import enMessages from "@/i18n/locales/en.json";
 import frMessages from "@/i18n/locales/fr.json";
 import { Providers } from "@/app/providers";
 import { Toaster } from "@/components/ui/sonner";
@@ -46,7 +44,7 @@ function RootComponent() {
     select: (location) => location.pathname
   });
   const locale = getPreferredLocale(pathname);
-  const messages = locale === "en" ? enMessages : locale === "fr" ? frMessages : zhMessages;
+  const messages = frMessages;
 
   useEffect(() => {
     document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000`;
@@ -79,7 +77,7 @@ function RootComponent() {
 function RootNotFound() {
   return (
     <main className="min-h-screen flex items-center justify-center">
-      <p className="text-muted-foreground">页面不存在</p>
+      <p className="text-muted-foreground">Page introuvable</p>
     </main>
   );
 }
