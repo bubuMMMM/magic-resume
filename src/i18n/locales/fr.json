@@ -1,0 +1,804 @@
+{
+  "common": {
+    "title": "Magic Resume",
+    "subtitle": "Editeur de CV propulse par IA",
+    "description": "Magic Resume est un editeur de CV open source, gratuit, respectueux de la vie privee. Sans inscription, toutes les donnees sont stockees localement, avec export et sauvegarde, garantissant la disponibilite de vos donnees.",
+    "dashboard": "Tableau de bord",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "newResume": "Nouveau CV",
+    "copy": "Copier",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "deleteSuccess": "Suppression reussie",
+    "deleteModuleConfirm": "Etes-vous sur de vouloir supprimer ce module ? Cette action est irreversible.",
+    "configured": "Configure",
+    "notConfigured": "Non configure"
+  },
+  "home": {
+    "header": {
+      "title": "Magic Resume",
+      "startButton": "Commencer",
+      "features": "Fonctionnalites",
+      "pricing": "Tarifs",
+      "about": "A propos",
+      "login": "Connexion",
+      "register": "Inscription",
+      "dashboard": "Tableau de bord"
+    },
+    "hero": {
+      "badge": "Creation de CV intelligente",
+      "title": "Rendez la creation de CV simple et intelligente",
+      "subtitle": "Magic Resume utilise l'IA pour vous aider a creer rapidement des CV professionnels. Sans inscription, gratuit, stockage securise des donnees.",
+      "cta": "Commencer",
+      "secondary": "Parcourir les modeles"
+    },
+    "features": {
+      "title": "Pourquoi choisir Magic Resume ?",
+      "subtitle": "Nous offrons une solution de CV tout-en-un pour faciliter votre recherche d'emploi",
+      "ai": {
+        "badge": "Verification IA",
+        "title": "Detection intelligente, conseils professionnels",
+        "description": "Verification grammaticale integree, identification automatique des expressions inappropriees, suggestions de corrections professionnelles pour un CV remarquable.",
+        "item1": "Amelioration intelligente",
+        "item1_description": "L'IA optimise automatiquement le contenu pour un CV plus professionnel",
+        "item2": "Verification grammaticale",
+        "item2_description": "Detecte et corrige automatiquement les fautes de grammaire et d'orthographe"
+      },
+      "storage": {
+        "badge": "Stockage local",
+        "title": "Securite des donnees, vie privee d'abord",
+        "description": "Toutes les donnees du CV sont entierement stockees localement, sans crainte de fuite de confidentialite. Exportez et sauvegardez vos donnees, disponibles a tout moment.",
+        "item1": "Stockage local",
+        "item1_description": "Donnees du CV stockees en securite sur votre disque dur",
+        "item2": "Plusieurs formats d'export",
+        "item2_description": "Export en PDF et JSON",
+        "item3": "Sauvegarde et export des donnees"
+      },
+      "preview": {
+        "badge": "Apercu en temps reel",
+        "title": "Ce que vous voyez est ce que vous obtenez",
+        "item1": "Apercu en temps reel des modifications",
+        "item2": "Prise en charge de plusieurs formats d'export"
+      }
+    },
+    "news": {
+      "label": "Actualite",
+      "content": "La nouvelle fonctionnalite d'amelioration IA est disponible"
+    },
+    "footer": {
+      "copyright": " 2025 Magic Resume. Tous droits reserves."
+    },
+    "changelog": "Journal des modifications",
+    "cta": {
+      "title": "Commencez un nouveau chapitre de carriere",
+      "description": "Utilisez Magic Resume des maintenant pour creer un CV impressionnant",
+      "button": "Commencer gratuitement"
+    },
+    "faq": {
+      "title": "Questions frequemment posees",
+      "items": [
+        {
+          "question": "Magic Resume est-il gratuit ?",
+          "answer": "Magic Resume est actuellement gratuit pour les besoins de base de creation de CV. Les fonctionnalites de la version open source ne changeront pas et l'export PDF sera toujours gratuit."
+        },
+        {
+          "question": "Mes donnees de CV sont-elles securisees ?",
+          "answer": "Oui, tres securisees. Magic Resume utilise le stockage local, ce qui signifie que toutes vos donnees sont sur votre propre appareil, sans stockage en nuage, garantissant une confidentialite totale."
+        },
+        {
+          "question": "Quels formats d'export sont pris en charge ?",
+          "answer": "Nous prenons actuellement en charge l'export en PDF, garantissant un formatage coherent sur tous les appareils. Nous prevoyons de prendre en charge d'autres formats a l'avenir."
+        },
+        {
+          "question": "Comment synchroniser entre appareils ?",
+          "answer": "Nous proposons l'export de configuration JSON, vous permettant de sauvegarder vos parametres de CV en JSON, accessible n'importe quand, n'importe ou, sur n'importe quel appareil."
+        },
+        {
+          "question": "Quel est le degre de personnalisation ?",
+          "answer": "Nous offrons de nombreuses options de personnalisation, incluant les couleurs, les mises en page et plus encore, vous permettant d'adapter votre CV selon vos preferences et les exigences du secteur."
+        }
+      ]
+    }
+  },
+  "dashboard": {
+    "sidebar": {
+      "appName": "Magic Resume",
+      "resumes": "CV",
+      "settings": "Parametres",
+      "templates": "Modeles",
+      "ai": "Config IA"
+    },
+    "resumes": {
+      "created": "Cree le",
+      "synced": "Dossiers synchronises",
+      "view": "Voir",
+      "myResume": "Mes CV",
+      "create": "Creer un CV",
+      "newResume": "Nouveau CV",
+      "newResumeDescription": "Creez un nouveau CV pour commencer.",
+      "import": "Importer un CV",
+      "untitled": "CV sans titre",
+      "importSuccess": "Configuration importee avec succes",
+      "importError": "Echec de l'importation, veuillez verifier le format du fichier",
+      "importDialog": {
+        "title": "Importer un CV",
+        "jsonTitle": "Importer JSON",
+        "jsonDescription": "Importez un fichier de configuration de CV exporte (.json)",
+        "pdfTitle": "Importer PDF",
+        "pdfDescription": "Utiliser Gemini pour convertir en donnees de CV structurees",
+        "importing": "Importation en cours, veuillez patienter...",
+        "geminiConfigRequired": "Veuillez d'abord configurer la cle API Gemini et l'ID de modele dans les parametres IA",
+        "pdfSuccess": "PDF importe avec succes",
+        "pdfError": "Echec de l'importation PDF. Verifiez le contenu PDF ou la configuration Gemini"
+      },
+      "notice": {
+        "title": "Attention",
+        "description": "Il est recommande de configurer un dossier de sauvegarde dans les parametres pour eviter de perdre vos donnees lors de la suppression du cache navigateur",
+        "goToSettings": "Aller aux parametres"
+      },
+      "deleteConfirmTitle": "Confirmer la suppression du CV ?",
+      "deleteConfirmDescription": "Cette action est irreversible. Le CV et ses donnees seront definitivemet supprimes.",
+      "createDialog": {
+        "title": "Creer un nouveau CV",
+        "description": "Commencer un nouveau CV a partir d'un modele vierge",
+        "tabs": {
+          "fromTemplate": "A partir d'un modele",
+          "uploadFile": "Importer un fichier"
+        },
+        "namePlaceholder": "Nom",
+        "switchTemplate": "Changer de modele",
+        "cancel": "Annuler",
+        "create": "Creer",
+        "blankTitle": "CV vierge",
+        "startFromBlank": "Commencer avec un modele vierge",
+        "startFromTemplate": "Commencer avec un modele",
+        "blankCardDescription": "Utiliser une mise en page integree par defaut et commencer de zero.",
+        "blankThumbnailDescription": "Commencez avec une page blanche et construisez un CV entierement personnalise.",
+        "createNow": "Creer maintenant",
+        "backToGrid": "Retour a la grille des modeles",
+        "blankPreviewDescription": "Choisissez une page vierge et construisez tout de zero, sans contraintes predefines.",
+        "useThisTemplate": "Utiliser ce modele",
+        "sample": {
+          "company": "Google",
+          "position": "Ingenieur Logiciel Senior",
+          "present": "Aujourd'hui",
+          "workDescription": "Direction de l'equipe frontend, amelioration des performances de 40%."
+        }
+      }
+    },
+    "settings": {
+      "title": "Parametres",
+      "syncDirectory": {
+        "title": "Repertoire de synchronisation",
+        "description": "Choisissez un dossier pour synchroniser et sauvegarder vos CV.",
+        "currentSyncFolder": "Dossier de synchronisation actuel",
+        "noFolderConfigured": "Aucun dossier configure",
+        "changeFolder": "Changer de dossier",
+        "selectFolder": "Selectionner un dossier"
+      },
+      "sync": {
+        "title": "Repertoire de synchronisation",
+        "description": "Choisissez un dossier pour synchroniser et sauvegarder vos CV.",
+        "select": "Selectionner un dossier"
+      },
+      "ai": {
+        "title": "Configuration IA",
+        "currentModel": "Modele actuel",
+        "selectModel": "Selectionner un modele",
+        "getApiKey": "Obtenir une cle API",
+        "doubao": {
+          "title": "Doubao",
+          "description": "Obtenir la cle API depuis Volcengine",
+          "apiKey": "Cle API Doubao",
+          "modelId": "ID du modele"
+        },
+        "deepseek": {
+          "title": "DeepSeek",
+          "description": "Obtenir la cle API depuis la plateforme DeepSeek",
+          "apiKey": "Cle API DeepSeek"
+        },
+        "openai": {
+          "title": "OpenAI",
+          "description": "Obtenir la cle API depuis OpenAI ou une plateforme compatible OpenAI",
+          "apiKey": "Cle API OpenAI",
+          "modelId": "ID du modele",
+          "apiEndpoint": "Point de terminaison API, ex : https://openai.example.org/v1"
+        },
+        "gemini": {
+          "title": "Gemini",
+          "description": "Prend en charge la correction, la verification grammaticale et l'importation de CV PDF. Modele recommande : gemini-flash-latest",
+          "apiKey": "Cle API Gemini",
+          "modelId": "ID du modele Gemini"
+        }
+      }
+    },
+    "templates": {
+      "title": "Modeles",
+      "useTemplate": "Utiliser ce modele",
+      "preview": "Apercu",
+      "switchTemplate": "Changer de modele",
+      "classic": {
+        "name": "Classique",
+        "description": "Mise en page traditionnelle et minimaliste, adaptee a la plupart des candidatures"
+      },
+      "modern": {
+        "name": "Deux colonnes",
+        "description": "Mise en page classique a deux colonnes, mettant en valeur les caracteristiques personnelles"
+      },
+      "leftRight": {
+        "name": "Fond de titre de section",
+        "description": "Titres de sections distinctifs avec couleur de fond"
+      },
+      "timeline": {
+        "name": "Chronologie",
+        "description": "Style chronologique, mettant en avant l'ordre temporel des experiences"
+      },
+      "minimalist": {
+        "name": "Minimaliste",
+        "description": "Large espace blanc, style de mise en page propre et epure"
+      },
+      "elegant": {
+        "name": "Elegant",
+        "description": "Conception monoColonne a titre centre, avec une touche d'elegance"
+      },
+      "creative": {
+        "name": "Creatif",
+        "description": "Design a contraste visuel, dynamique et personnalise"
+      },
+      "editorial": {
+        "name": "Editorial",
+        "description": "Melange luxueux de typographie serif grasse et sans-serif raffinee"
+      }
+    }
+  },
+  "pdfExport": {
+    "button": {
+      "export": "Exporter",
+      "exportPdf": "Exporter PDF (Serveur)",
+      "exportJson": "Exporter config JSON",
+      "exporting": "Exportation...",
+      "exportingJson": "Exportation...",
+      "print": "Impression navigateur"
+    },
+    "toast": {
+      "success": "PDF exporte avec succes",
+      "error": "Echec de l'export PDF",
+      "jsonSuccess": "Configuration exportee avec succes",
+      "jsonError": "Echec de l'export de la configuration"
+    }
+  },
+  "previewDock": {
+    "switchTemplate": "Changer de modele",
+    "grammarCheck": {
+      "idle": "Verification grammaticale IA",
+      "checking": "Verification en cours...",
+      "configurePrompt": "Veuillez configurer le modele IA",
+      "configureButton": "Configurer",
+      "errorToast": "Echec de la verification grammaticale, veuillez reessayer"
+    },
+    "sidePanel": {
+      "expand": "Developper le panneau lateral",
+      "collapse": "Reduire le panneau lateral"
+    },
+    "editPanel": {
+      "expand": "Developper le panneau d'edition",
+      "collapse": "Reduire le panneau d'edition"
+    },
+    "previewPanel": {
+      "expand": "Developper le panneau d'apercu",
+      "collapse": "Reduire le panneau d'apercu"
+    },
+    "github": "GitHub",
+    "backToDashboard": "Retour au tableau de bord",
+    "copyResume": {
+      "tooltip": "Copier le CV",
+      "success": "CV copie avec succes",
+      "error": "Echec de la copie du CV"
+    },
+    "export": {
+      "tooltip": "Exporter le CV",
+      "pdf": "Exporter PDF",
+      "json": "Exporter JSON",
+      "print": "Imprimer"
+    },
+    "autoOnePage": {
+      "tooltip": "Ajuster automatiquement sur une page",
+      "enabled": "Mode une page active",
+      "disabled": "Mode une page desactive",
+      "cannotFit": "Trop de contenu. Optimise au maximum mais impossible de tenir sur une page. Essayez de simplifier le contenu ou d'ajuster les marges et la taille de police dans la barre laterale."
+    },
+    "backup": {
+      "configured": "Sauvegarde configuree",
+      "notConfigured": "Sauvegarde non configuree",
+      "clickToConfigure": "Cliquer pour configurer"
+    }
+  },
+  "workbench": {
+    "sidePanel": {
+      "layout": {
+        "title": "Mise en page",
+        "addCustomSection": "Ajouter un module",
+        "addCustomSectionOption": "Ajouter une section personnalisee",
+        "standardSections": {
+          "skills": "Competences",
+          "experience": "Experience professionnelle",
+          "projects": "Projets",
+          "education": "Formation",
+          "selfEvaluation": "Profil personnel",
+          "certificates": "Certificats"
+        }
+      },
+      "theme": {
+        "title": "Couleur du theme",
+        "custom": "Personnalise"
+      },
+      "typography": {
+        "title": "Typographie",
+        "font": {
+          "title": "Police",
+          "alibaba": "Alibaba PuHuiTi",
+          "misans": "MiSans",
+          "notosanssc": "Noto Sans SC",
+          "sourcehanserifsc": "Source Han Serif SC",
+          "note": "MiSans est utilise sous sa licence commerciale gratuite. Conservez l'attribution MiSans lors de la distribution de ce projet."
+        },
+        "lineHeight": {
+          "title": "Interligne",
+          "normal": "Normal",
+          "relaxed": "Relaxe",
+          "loose": "Large"
+        },
+        "baseFontSize": {
+          "title": "Taille de police de base"
+        },
+        "headerSize": {
+          "title": "Taille du titre de section"
+        },
+        "subheaderSize": {
+          "title": "Taille du sous-titre de section"
+        }
+      },
+      "spacing": {
+        "title": "Espacement",
+        "pagePadding": {
+          "title": "Marges de page"
+        },
+        "sectionSpacing": {
+          "title": "Espacement des sections"
+        },
+        "paragraphSpacing": {
+          "title": "Espacement des paragraphes"
+        }
+      },
+      "mode": {
+        "title": "Mode",
+        "useIconMode": {
+          "title": "Mode icones"
+        },
+        "centerSubtitle": {
+          "title": "Centrer le sous-titre"
+        },
+        "flexibleHeaderLayout": {
+          "title": "Titre long"
+        }
+      }
+    },
+    "basicPanel": {
+      "title": "Profil",
+      "avatar": "Photo",
+      "basicField": "Informations de base",
+      "customField": "Champs personnalises",
+      "layout": "Alignement",
+      "customFields": {
+        "placeholders": {
+          "label": "Etiquette",
+          "value": "Valeur"
+        },
+        "displayLabel": "Afficher l'etiquette",
+        "addButton": "Ajouter un champ personnalise"
+      },
+      "basicFields": {
+        "name": "Nom",
+        "title": "Titre",
+        "email": "Email",
+        "phone": "Telephone",
+        "website": "Site web",
+        "location": "Localisation",
+        "birthDate": "Date de naissance",
+        "employementStatus": "Statut"
+      },
+      "fieldVisibility": {
+        "show": "Afficher",
+        "hide": "Masquer"
+      },
+      "githubContributions": "Contributions GitHub"
+    },
+    "experiencePanel": {
+      "title": "Experience professionnelle",
+      "addButton": "Ajouter une experience",
+      "defaultProject": {
+        "company": "Entreprise Tech SAS",
+        "position": "Ingenieur Frontend Senior",
+        "date": "2020-Aujourd'hui",
+        "details": "Responsable du developpement du produit principal..."
+      },
+      "placeholders": {
+        "company": "Nom de l'entreprise",
+        "position": "Intitule du poste",
+        "date": "Periode d'emploi",
+        "details": "Responsabilites et realisations"
+      }
+    },
+    "experienceItem": {
+      "labels": {
+        "company": "Nom de l'entreprise",
+        "position": "Poste",
+        "date": "Periode d'emploi",
+        "details": "Responsabilites"
+      },
+      "placeholders": {
+        "company": "Entrez le nom de l'entreprise",
+        "position": "ex : Ingenieur Frontend",
+        "date": "ex : 2020-Aujourd'hui",
+        "details": "Decrivez vos responsabilites et realisations dans ce poste"
+      },
+      "buttons": {
+        "edit": "Modifier",
+        "save": "Sauvegarder",
+        "cancel": "Annuler",
+        "delete": "Supprimer"
+      },
+      "visibility": {
+        "show": "Afficher",
+        "hide": "Masquer"
+      }
+    },
+    "projectPanel": {
+      "title": "Projets",
+      "addButton": "Ajouter un projet",
+      "defaultProject": {
+        "name": "Projet personnel",
+        "description": "Description du projet",
+        "role": "Responsabilites",
+        "date": "2023.01 - 2023.06"
+      },
+      "placeholders": {
+        "name": "Nom du projet",
+        "description": "Decrivez brievement le contexte et les objectifs du projet",
+        "role": "Votre role et vos responsabilites dans le projet",
+        "date": "Plage de temps du projet",
+        "link": "Lien du projet"
+      }
+    },
+    "projectItem": {
+      "labels": {
+        "name": "Nom du projet",
+        "role": "Role dans le projet",
+        "date": "Periode du projet",
+        "description": "Description du projet",
+        "technologies": "Technologies utilisees",
+        "link": "Lien du projet",
+        "linkLabel": "Texte d'affichage"
+      },
+      "placeholders": {
+        "name": "Entrez le nom du projet",
+        "role": "Votre role dans le projet",
+        "date": "Plage de temps du projet",
+        "description": "Decrivez brievement le contexte et les objectifs",
+        "technologies": "Technologies et outils utilises",
+        "link": "Lien du projet",
+        "linkLabel": "Texte d'affichage"
+      },
+      "hints": {
+        "linkLabel": "Si le texte d'affichage est vide, le domaine ou l'URL complete sera affiche automatiquement. Seuls les liens http:// et https:// sont pris en charge."
+      },
+      "buttons": {
+        "edit": "Modifier",
+        "save": "Sauvegarder",
+        "cancel": "Annuler",
+        "delete": "Supprimer"
+      },
+      "visibility": {
+        "show": "Afficher",
+        "hide": "Masquer"
+      }
+    },
+    "educationPanel": {
+      "title": "Formation",
+      "addButton": "Ajouter une formation",
+      "defaultProject": {
+        "school": "Nom de l'etablissement",
+        "degree": "Diplome",
+        "major": "Specialite",
+        "date": "2020.09 - 2024.06"
+      },
+      "placeholders": {
+        "school": "Entrez le nom de l'etablissement",
+        "degree": "Selectionnez le diplome",
+        "major": "Entrez la specialite",
+        "date": "Entrez la periode d'etudes"
+      }
+    },
+    "educationItem": {
+      "labels": {
+        "school": "Nom de l'etablissement",
+        "degree": "Diplome",
+        "major": "Specialite",
+        "date": "Periode d'etudes",
+        "description": "Description",
+        "gpa": "Moyenne",
+        "location": "Lieu",
+        "startDate": "Date de debut",
+        "endDate": "Date de fin"
+      },
+      "placeholders": {
+        "school": "Entrez le nom de l'etablissement",
+        "degree": "Selectionnez le diplome",
+        "major": "Entrez la specialite",
+        "date": "Entrez la plage de temps des etudes",
+        "description": "Entrez la description de l'etablissement",
+        "gpa": "Entrez la moyenne",
+        "location": "Entrez le lieu"
+      },
+      "buttons": {
+        "edit": "Modifier",
+        "save": "Sauvegarder",
+        "cancel": "Annuler",
+        "delete": "Supprimer"
+      },
+      "visibility": {
+        "show": "Afficher",
+        "hide": "Masquer"
+      }
+    },
+    "certificatesPanel": {
+      "title": "Certificats",
+      "addButton": "Ajouter un certificat",
+      "tips": "Cliquez pour uploader ou collez (Cmd/Ctrl + V) des images directement. Ajustez le ratio de largeur pour une mise en page horizontale.",
+      "width": "Largeur (%)",
+      "delete": "Supprimer",
+      "empty": "Aucune image pour l'instant. Veuillez uploader ou coller des images."
+    }
+  },
+  "field": {
+    "selectDate": "Selectionner une date",
+    "enterYear": "Entrez l'annee",
+    "toPresent": "Aujourd'hui"
+  },
+  "richEditor": {
+    "bold": "Gras",
+    "italic": "Italique",
+    "underline": "Souligne",
+    "link": "Lien",
+    "linkPlaceholder": "Entrez une URL, par exemple https://example.com",
+    "linkApply": "Appliquer",
+    "linkRemove": "Supprimer",
+    "linkInvalid": "Veuillez entrer une URL valide",
+    "textColor": "Couleur du texte",
+    "backgroundColor": "Couleur de fond",
+    "alignLeft": "Aligner a gauche",
+    "alignCenter": "Centrer",
+    "alignRight": "Aligner a droite",
+    "alignJustify": "Justifier",
+    "bulletList": "Liste a puces",
+    "orderedList": "Liste numerotee",
+    "undo": "Annuler",
+    "redo": "Retablir",
+    "aiPolish": "Correction IA",
+    "paragraph": "Paragraphe",
+    "heading1": "Titre 1",
+    "heading2": "Titre 2",
+    "heading3": "Titre 3",
+    "colors": {
+      "black": "Noir",
+      "darkGray": "Gris fonce",
+      "gray": "Gris",
+      "red": "Rouge",
+      "orange": "Orange",
+      "orangeYellow": "Orange jaune",
+      "yellow": "Jaune",
+      "yellowGreen": "Jaune vert",
+      "green": "Vert",
+      "cyan": "Cyan",
+      "lightBlue": "Bleu clair",
+      "blue": "Bleu",
+      "purple": "Violet",
+      "magenta": "Magenta",
+      "pink": "Rose"
+    }
+  },
+  "iconSelector": {
+    "all": "Tous",
+    "searchPlaceholder": "Rechercher des icones...",
+    "noMatchingIcons": "Aucune icone correspondante",
+    "tryOtherKeywords": "Essayez d'autres mots-cles",
+    "selectOtherCategory": "Selectionnez une autre categorie",
+    "categories": {
+      "personal": "Informations personnelles",
+      "education": "Formation",
+      "experience": "Experience professionnelle",
+      "skills": "Competences",
+      "languages": "Langues",
+      "projects": "Projets",
+      "achievements": "Realisations",
+      "hobbies": "Loisirs",
+      "social": "Reseaux sociaux",
+      "others": "Autres"
+    },
+    "icons": {
+      "user": "Utilisateur",
+      "email": "Email",
+      "phone": "Telephone",
+      "address": "Adresse",
+      "website": "Site web",
+      "mobile": "Mobile",
+      "education": "Formation",
+      "school": "Ecole",
+      "major": "Specialite",
+      "library": "Bibliotheque",
+      "scholarship": "Bourse",
+      "work": "Travail",
+      "company": "Entreprise",
+      "office": "Bureau",
+      "dateRange": "Plage de dates",
+      "workTime": "Temps de travail",
+      "programming": "Programmation",
+      "system": "Systeme",
+      "database": "Base de donnees",
+      "terminal": "Terminal",
+      "techStack": "Stack technique",
+      "language": "Langue",
+      "speaking": "Expression orale",
+      "communication": "Communication",
+      "project": "Projet",
+      "branch": "Branche",
+      "release": "Publication",
+      "target": "Objectif",
+      "trophy": "Trophee",
+      "medal": "Medaille",
+      "star": "Etoile",
+      "interest": "Interet",
+      "music": "Musique",
+      "art": "Art",
+      "photography": "Photographie",
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "profile": "Profil",
+      "review": "Evaluation",
+      "filter": "Filtre",
+      "link": "Lien",
+      "salary": "Salaire",
+      "idea": "Idee",
+      "send": "Envoyer",
+      "share": "Partager",
+      "settings": "Parametres",
+      "search": "Recherche",
+      "flag": "Marqueur",
+      "bookmark": "Favori",
+      "thumbsUp": "Pouce en l'air",
+      "skill": "Competence"
+    }
+  },
+  "aiPolishDialog": {
+    "title": "Correction IA",
+    "description": {
+      "ready": "Ajoutez des instructions optionnelles, puis cliquez sur \"Demarrer la correction\"",
+      "polishing": "Correction de votre contenu en cours...",
+      "finished": "Le contenu a ete optimise, veuillez verifier le resultat"
+    },
+    "error": {
+      "configRequired": "Veuillez d'abord configurer le modele IA",
+      "polishFailed": "Echec de la correction",
+      "applied": "Contenu corrige applique"
+    },
+    "content": {
+      "original": "Contenu original",
+      "polished": "Contenu corrige"
+    },
+    "customInstructions": "Instructions personnalisees",
+    "customInstructionsPlaceholder": "ex. Utilisez des termes plus techniques, mettez en valeur les metriques, gardez un ton formel... (optionnel)",
+    "button": {
+      "start": "Demarrer la correction",
+      "regenerate": "Regenerer",
+      "generating": "Generation...",
+      "apply": "Appliquer le contenu"
+    }
+  },
+  "photoConfig": {
+    "title": "Parametres de photo",
+    "description": "Personnalisez votre photo de CV",
+    "upload": {
+      "title": "Lien en ligne",
+      "dragHint": "Glissez-deposez ou cliquez pour uploader une image",
+      "sizeLimit": "La taille de l'image ne doit pas depasser 2 Mo",
+      "typeLimit": "Veuillez uploader un fichier image",
+      "urlPlaceholder": "Entrez le lien de l'image",
+      "invalidUrl": "URL d'image invalide ou inaccessible, veuillez essayer un autre lien",
+      "timeout": "Delai de chargement depasse",
+      "loadError": "Echec du chargement de l'image"
+    },
+    "config": {
+      "aspectRatio": "Ratio d'aspect",
+      "size": "Taille",
+      "width": "Largeur",
+      "height": "Hauteur",
+      "border-radius": "Rayon de bordure",
+      "widthPlaceholder": "Largeur",
+      "heightPlaceholder": "Hauteur",
+      "ratios": {
+        "1:1": "1:1 Carre",
+        "4:3": "4:3 Paysage",
+        "3:4": "3:4 Portrait",
+        "16:9": "16:9 Ecran large",
+        "custom": "Personnalise"
+      },
+      "borderRadius": {
+        "none": "Aucun",
+        "medium": "Moyen",
+        "full": "Cercle",
+        "custom": "Personnalise",
+        "customPlaceholder": "Rayon de bordure personnalise"
+      }
+    },
+    "actions": {
+      "reset": "Reinitialiser",
+      "close": "Fermer",
+      "cancel": "Annuler",
+      "removePhoto": "Supprimer la photo"
+    }
+  },
+  "templates": {
+    "switchTemplate": "Changer de modele"
+  },
+  "themeModal": {
+    "delete": {
+      "title": "Confirmer la suppression",
+      "description": "Etes-vous sur de vouloir supprimer {title} ?",
+      "confirmText": "Supprimer",
+      "cancelText": "Annuler"
+    }
+  },
+  "grammarCheck": {
+    "title": "Verification grammaticale IA",
+    "description": "Trouve {count} suggestions",
+    "exit": "Quitter",
+    "spelling": "Orthographe",
+    "punctuation": "Ponctuation",
+    "original": "Original",
+    "error_point": "Erreur",
+    "suggestion": "Suggestion",
+    "reason": "Raison",
+    "accept": "Appliquer",
+    "ignore": "Ignorer",
+    "found_issues": "Trouve {count} problemes",
+    "applied_success": "Modifications appliquees",
+    "apply_error": "Texte introuvable, impossible d'appliquer automatiquement",
+    "no_errors_title": "Parfait !",
+    "no_errors_desc": "Aucune faute de grammaire ou de ponctuation trouvee."
+  },
+  "faqDialog": {
+    "title": "Questions frequentes (FAQ)",
+    "description": "Conseils et solutions courants pour le plan de travail Magic Resume.",
+    "items": {
+      "browser-compatibility": {
+        "question": "Quel navigateur est recommande ?",
+        "answer": "Nous recommandons d'utiliser la derniere version de Chrome ou Edge pour la meilleure experience de mise en page et d'export. Certains anciens navigateurs peuvent causer des problemes de style."
+      },
+      "export-failure": {
+        "question": "Que faire si l'export echoue ou si le style est casse ?",
+        "answer": "1. Nous recommandons d'utiliser Google Chrome pour une meilleure compatibilite.\n2. Si cela echoue toujours, essayez en mode navigation privee pour exclure les interferences d'extensions.\n3. Vous pouvez aussi cliquer sur 'PDF (Sauvegarde)' dans le menu d'export et selectionner 'Enregistrer en PDF' dans la boite de dialogue d'impression."
+      },
+      "export-methods": {
+        "question": "Quelle est la difference entre les deux methodes d'export ?",
+        "answer": "• Export PDF : Utilise un service backend pour un rendu haute precision, restituant 100% la mise en page. Recommande pour la soumission formelle aux RH.\n\n• Impression navigateur : Appelle la fonction d'impression native de votre navigateur (Enregistrer en PDF). Utile lorsque le service d'export backend est occupe."
+      },
+      "drag-and-drop": {
+        "question": "Comment reorganiser les modules par glisser-deposer ?",
+        "answer": "Dans les parametres 'Mise en page' du panneau d'edition gauche, survolez la 'poignee de glissement' (generalement representee par une icone a six points) a gauche de la carte du module. Cliquez et maintenez le bouton gauche de la souris pour faire glisser le module vers le haut ou le bas."
+      }
+    }
+  }
+}

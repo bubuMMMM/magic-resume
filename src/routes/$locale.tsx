@@ -3,6 +3,7 @@ import LandingPage from "@/app/(public)/[locale]/page";
 import { defaultLocale, locales, type Locale } from "@/i18n/config";
 import zhMessages from "@/i18n/locales/zh.json";
 import enMessages from "@/i18n/locales/en.json";
+import frMessages from "@/i18n/locales/fr.json";
 
 const SEO_BASE_URL = "https://magicv.art";
 
@@ -14,12 +15,12 @@ function resolveLocale(rawLocale: string): Locale {
 }
 
 function getLocaleSeo(locale: Locale) {
-  const messages = locale === "en" ? enMessages : zhMessages;
+  const messages = locale === "en" ? enMessages : locale === "fr" ? frMessages : zhMessages;
   const title = `${messages.common.title} - ${messages.common.subtitle}`;
   const description = messages.common.description;
-  const localeTag = locale === "en" ? "en_US" : "zh_CN";
+  const localeTag = locale === "en" ? "en_US" : locale === "fr" ? "fr_FR" : "zh_CN";
   const canonical = `${SEO_BASE_URL}/${locale}`;
-  const alternateLocale = locale === "en" ? "zh" : "en";
+  const alternateLocale = locale === "zh" ? "en" : "zh";
 
   return {
     title,
