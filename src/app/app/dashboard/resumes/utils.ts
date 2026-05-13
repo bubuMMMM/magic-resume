@@ -1,5 +1,5 @@
 import { generateUUID } from "@/utils/uuid";
-import { initialResumeState } from "@/config/initialResumeData";
+import { initialResumeStateFr as initialResumeState } from "@/config/initialResumeData";
 import { DEFAULT_TEMPLATES } from "@/config";
 
 export const escapeHtml = (value: string) =>

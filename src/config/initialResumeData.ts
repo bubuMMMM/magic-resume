@@ -378,3 +378,200 @@ export const blankResumeStateEn = {
   certificates: [],
   menuSections: [initialResumeStateEn.menuSections[0]],
 };
+
+export const initialResumeStateFr = {
+  title: "Nouveau CV",
+  basic: {
+    name: "Camille Dubois",
+    title: "Ingenieure Frontend Senior",
+    employementStatus: "Disponible",
+    email: "camille.dubois@exemple.fr",
+    phone: "06 12 34 56 78",
+    location: "Paris, France",
+    birthDate: "",
+    fieldOrder: DEFAULT_FIELD_ORDER,
+    icons: {
+      email: "Mail",
+      phone: "Phone",
+      birthDate: "CalendarRange",
+      employementStatus: "Briefcase",
+      location: "MapPin",
+    },
+    photoConfig: DEFAULT_CONFIG,
+    customFields: [
+      {
+        id: "personal",
+        label: "Site personnel",
+        value: "https://camille-dubois.fr",
+        icon: "Globe",
+      },
+      {
+        id: "linkedin",
+        label: "LinkedIn",
+        value: "linkedin.com/in/camilledubois",
+        icon: "Linkedin",
+      },
+    ],
+    photo: "/avatar.png",
+    githubKey: "",
+    githubUseName: "",
+    githubContributionsVisible: false,
+  },
+  education: [
+    {
+      id: "1",
+      school: "Ecole Polytechnique",
+      major: "Informatique et Genie Logiciel",
+      degree: "Master",
+      startDate: "2014-09",
+      endDate: "2017-06",
+      visible: true,
+      gpa: "",
+      description: `<ul>
+        <li>Specialisation en developpement web et architectures distribuees</li>
+        <li>Mention Tres Bien, classee dans le top 5% de la promotion</li>
+        <li>Vice-presidente de l'association informatique, organisation de hackathons</li>
+        <li>Stage de fin d'etudes chez Criteo sur l'optimisation de performances frontend</li>
+      </ul>`,
+    },
+  ],
+  skillContent: `<div class="skill-content">
+  <ul>
+    <li>Frameworks Frontend : React, Vue.js, Next.js, Nuxt.js et frameworks SSR</li>
+    <li>Langages : TypeScript, JavaScript (ES6+), HTML5, CSS3</li>
+    <li>UI/Style : TailwindCSS, Sass/Less, CSS Modules, Styled-components</li>
+    <li>Gestion d'etat : Redux, Zustand, Jotai, React Query, TanStack Query</li>
+    <li>Outils de build : Webpack, Vite, Rollup, Turbopack, ESLint, Prettier</li>
+    <li>Tests : Jest, Vitest, React Testing Library, Playwright, Cypress</li>
+    <li>Performance : Optimisation Web Vitals, code splitting, lazy loading, SSR/ISR</li>
+    <li>DevOps : Git, GitHub Actions, Docker, Vercel, AWS S3/CloudFront</li>
+    <li>Leadership : Encadrement d'equipes, mentorat, conduite de revues techniques</li>
+  </ul>
+</div>`,
+  selfEvaluationContent: "",
+  experience: [
+    {
+      id: "1",
+      company: "Doctolib",
+      position: "Ingenieure Frontend Senior",
+      date: "2021.07 - Present",
+      visible: true,
+      details: `<ul>
+        <li>Responsable du developpement de la plateforme patient utilisee par plus de 70 millions d'utilisateurs en Europe</li>
+        <li>Mise en place d'une architecture micro-frontends avec Module Federation, reduction du temps de build de 60%</li>
+        <li>Conception d'une bibliotheque de composants partagee, gain de productivite de 40% pour 8 equipes produit</li>
+        <li>Pilotage de l'optimisation Web Vitals : LCP passe de 3.2s a 1.4s, +18% de conversion</li>
+        <li>Mentorat de 5 ingenieurs juniors et animation de sessions techniques hebdomadaires</li>
+      </ul>`,
+    },
+    {
+      id: "2",
+      company: "BlaBlaCar",
+      position: "Ingenieure Frontend",
+      date: "2018.03 - 2021.06",
+      visible: true,
+      details: `<ul>
+        <li>Refonte complete du parcours de reservation avec React et Redux, +25% de taux de conversion</li>
+        <li>Internationalisation de l'application sur 22 pays avec gestion des fuseaux horaires et devises</li>
+        <li>Mise en place de tests E2E avec Cypress, couverture passee de 30% a 85%</li>
+        <li>Collaboration etroite avec les equipes design et produit en methodologie agile (Scrum)</li>
+      </ul>`,
+    },
+  ],
+  draggingProjectId: null,
+  projects: [
+    {
+      id: "p1",
+      name: "Plateforme Patient Doctolib",
+      role: "Lead Frontend",
+      date: "2022.06 - 2023.12",
+      description: `<ul>
+        <li>Application React servant plus de 70 millions de patients en Europe</li>
+        <li>Architecture micro-frontends avec Module Federation et monorepo Nx</li>
+        <li>Gestion d'etat complexe avec Redux Toolkit et React Query pour la synchronisation serveur</li>
+        <li>Design system propre base sur Radix UI et TailwindCSS, plus de 80 composants</li>
+        <li>Optimisation des Core Web Vitals : LCP < 1.5s, CLS < 0.05 sur mobile</li>
+      </ul>`,
+      visible: true,
+    },
+    {
+      id: "p2",
+      name: "Application Mobile BlaBlaCar",
+      role: "Developpeuse principale",
+      date: "2020.03 - 2021.06",
+      description: `<ul>
+        <li>Application React Native pour iOS et Android, plus de 10 millions de telechargements</li>
+        <li>Integration native avec les modules de paiement (Stripe, Apple Pay, Google Pay)</li>
+        <li>Geolocalisation en temps reel avec cartographie Mapbox</li>
+        <li>Mise en place de l'offline-first avec synchronisation differee</li>
+      </ul>`,
+      visible: true,
+    },
+    {
+      id: "p3",
+      name: "Design System Open Source",
+      role: "Contributrice principale",
+      date: "2019.09 - 2020.03",
+      description: `<ul>
+        <li>Bibliotheque de composants React open source utilisee par plus de 500 entreprises</li>
+        <li>Documentation interactive avec Storybook et tests visuels avec Chromatic</li>
+        <li>Publication automatique sur npm via GitHub Actions et Changesets</li>
+        <li>Plus de 2 000 etoiles sur GitHub et 50 contributeurs actifs</li>
+      </ul>`,
+      visible: true,
+    },
+  ],
+  menuSections: [
+    { id: "basic", title: "Informations", icon: "👤", enabled: true, order: 0 },
+    { id: "skills", title: "Competences", icon: "⚡", enabled: true, order: 1 },
+    {
+      id: "experience",
+      title: "Experience professionnelle",
+      icon: "💼",
+      enabled: true,
+      order: 2,
+    },
+    {
+      id: "projects",
+      title: "Projets",
+      icon: "🚀",
+      enabled: true,
+      order: 3,
+    },
+    {
+      id: "education",
+      title: "Formation",
+      icon: "🎓",
+      enabled: true,
+      order: 4,
+    },
+  ],
+  certificates: [],
+  customData: {},
+  activeSection: "basic",
+  globalSettings: initialGlobalSettings,
+};
+
+export const blankResumeStateFr = {
+  ...initialResumeStateFr,
+  title: "Nouveau CV",
+  basic: {
+    ...initialResumeStateFr.basic,
+    name: "",
+    title: "",
+    email: "",
+    phone: "",
+    location: "",
+    birthDate: "",
+    employementStatus: "",
+    photo: "",
+    customFields: [],
+  },
+  education: [],
+  skillContent: "",
+  selfEvaluationContent: "",
+  experience: [],
+  projects: [],
+  certificates: [],
+  menuSections: [initialResumeStateFr.menuSections[0]],
+};

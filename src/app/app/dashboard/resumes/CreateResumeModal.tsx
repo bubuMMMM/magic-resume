@@ -9,7 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { DEFAULT_TEMPLATES } from "@/config";
-import { initialResumeState } from "@/config/initialResumeData";
+import { initialResumeState, initialResumeStateEn, initialResumeStateFr } from "@/config/initialResumeData";
 import ResumeTemplateComponent from "@/components/templates";
 import { useTemplateSnapshots } from "@/hooks/useTemplateSnapshots";
 import type { Translator } from "@/i18n/compat/utils";
@@ -97,16 +97,24 @@ const TemplateCardThumbnail = ({
 const TemplateThumbnail = ({
     template,
     t,
+    locale,
     scaleModifier = 1,
     quality = "low" // low for grid, high for preview
 }: {
     template: TemplateOption,
     t: Translator,
+    locale: string,
     scaleModifier?: number,
     quality?: "low" | "high"
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [scale, setScale] = useState(0.2);
+    const baseData =
+        locale === "en"
+            ? initialResumeStateEn
+            : locale === "zh"
+            ? initialResumeState
+            : initialResumeStateFr;
 
     useEffect(() => {
         if (!containerRef.current || template.isBlank) return;
@@ -138,20 +146,20 @@ const TemplateThumbnail = ({
         : [];
 
     const previewData: ResumeData = {
-        ...initialResumeState,
+        ...baseData,
         id: "preview-mock",
         templateId: template.id,
         createdAt: new Date(0).toISOString(),
         updatedAt: new Date(0).toISOString(),
         globalSettings: {
-            ...initialResumeState.globalSettings,
+            ...baseData.globalSettings,
             themeColor: template.colorScheme?.primary || "#000",
             sectionSpacing: template.spacing?.sectionGap || 16,
             paragraphSpacing: template.spacing?.itemGap || 8,
             pagePadding: template.spacing?.contentPadding || 32,
         },
         basic: {
-            ...initialResumeState.basic,
+            ...baseData.basic,
             layout: (template.basic?.layout as any) || "left",
         },
         // Feed richer mock content in large preview.
@@ -366,7 +374,7 @@ export const CreateResumeModal = ({
                                                 width: "auto"
                                             }}
                                         >
-                                            <TemplateThumbnail template={previewTarget} t={t} quality="high" scaleModifier={1} />
+                                            <TemplateThumbnail template={previewTarget} t={t} locale={locale} quality="high" scaleModifier={1} />
                                         </motion.div>
                                     </motion.div>
                                 </div>

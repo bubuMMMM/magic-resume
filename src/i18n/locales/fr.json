@@ -62,6 +62,19 @@
         "item2": "Prise en charge de plusieurs formats d'export"
       }
     },
+    "templatesShowcase": {
+      "badge": "18 modeles disponibles",
+      "title": "Des modeles pour chaque metier",
+      "subtitle": "Du classique au neobrutaliste, choisissez le style qui vous correspond. Tous les modeles sont entierement personnalisables.",
+      "cta": "Explorer tous les modeles",
+      "tags": {
+        "modern": "Moderne",
+        "minimal": "Minimaliste",
+        "creative": "Creatif",
+        "tech": "Tech",
+        "classic": "Classique"
+      }
+    },
     "news": {
       "label": "Actualite",
       "content": "La nouvelle fonctionnalite d'amelioration IA est disponible"

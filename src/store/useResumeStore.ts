@@ -16,8 +16,10 @@ import { DEFAULT_TEMPLATES } from "@/config";
 import {
   initialResumeState,
   initialResumeStateEn,
+  initialResumeStateFr,
   blankResumeState,
   blankResumeStateEn,
+  blankResumeStateFr,
 } from "@/config/initialResumeData";
 import { generateUUID } from "@/utils/uuid";
 interface ResumeStore {
@@ -140,16 +142,24 @@ export const useResumeStore = create(
             ? document.cookie
                 .split("; ")
                 .find((row) => row.startsWith("NEXT_LOCALE="))
-                ?.split("=")[1] || "zh"
-            : "zh";
+                ?.split("=")[1] || "fr"
+            : "fr";
 
         let initialResumeData: any;
         if (isBlank) {
           initialResumeData =
-            locale === "en" ? blankResumeStateEn : blankResumeState;
+            locale === "en"
+              ? blankResumeStateEn
+              : locale === "zh"
+              ? blankResumeState
+              : blankResumeStateFr;
         } else {
           initialResumeData =
-            locale === "en" ? initialResumeStateEn : initialResumeState;
+            locale === "en"
+              ? initialResumeStateEn
+              : locale === "zh"
+              ? initialResumeState
+              : initialResumeStateFr;
         }
 
         const id = generateUUID();
@@ -157,16 +167,20 @@ export const useResumeStore = create(
           ? DEFAULT_TEMPLATES.find((t) => t.id === templateId)
           : DEFAULT_TEMPLATES[0];
 
+        const titlePrefix =
+          locale === "en"
+            ? "New Resume"
+            : locale === "zh"
+            ? "新建简历"
+            : "Nouveau CV";
+
         const newResume: ResumeData = {
           ...initialResumeData,
           id,
           createdAt: new Date().toISOString(),
           updatedAt: new Date().toISOString(),
           templateId: template?.id,
-          title: `${locale === "en" ? "New Resume" : "新建简历"} ${id.slice(
-            0,
-            6
-          )}`,
+          title: `${titlePrefix} ${id.slice(0, 6)}`,
         };
 
         set((state) => ({

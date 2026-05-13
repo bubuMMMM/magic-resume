@@ -1,5 +1,5 @@
 import { DEFAULT_TEMPLATES } from "@/config";
-import { initialResumeStateEn } from "@/config/initialResumeData";
+import { initialResumeStateFr } from "@/config/initialResumeData";
 import type { ResumeData } from "@/types/resume";
 import type { ResumeTemplate } from "@/types/template";
 
@@ -38,7 +38,7 @@ export const getTemplateById = (templateId: string | undefined): ResumeTemplate 
   DEFAULT_TEMPLATES[0];
 
 export const getTemplatePreviewBaseData = (_locale: TemplatePreviewLocale) =>
-  initialResumeStateEn;
+  initialResumeStateFr;
 
 export const createTemplatePreviewData = (
   template: ResumeTemplate,

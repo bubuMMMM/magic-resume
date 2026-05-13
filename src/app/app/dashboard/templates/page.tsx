@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import ResumeTemplateComponent from "@/components/templates";
-import { initialResumeState, initialResumeStateEn } from "@/config/initialResumeData";
+import { initialResumeState, initialResumeStateEn, initialResumeStateFr } from "@/config/initialResumeData";
 import type { ResumeTemplate } from "@/types/template";
 import { normalizeFontFamily } from "@/utils/fonts";
 
@@ -33,7 +33,8 @@ const getTemplateKey = (templateId: string) =>
 
 type TemplatePreviewBaseData =
   | typeof initialResumeState
-  | typeof initialResumeStateEn;
+  | typeof initialResumeStateEn
+  | typeof initialResumeStateFr;
 
 const buildTemplatePreviewData = (
   baseData: TemplatePreviewBaseData,
@@ -235,7 +236,12 @@ const TemplatesPage = () => {
     }
   };
 
-  const baseData = locale === "en" ? initialResumeStateEn : initialResumeState;
+  const baseData =
+    locale === "en"
+      ? initialResumeStateEn
+      : locale === "zh"
+      ? initialResumeState
+      : initialResumeStateFr;
   const activePreviewTemplate =
     DEFAULT_TEMPLATES.find((template) => template.id === previewTemplate) ??
     null;
