@@ -1,4 +1,3 @@
-import { useTranslations } from "@/i18n/compat/client";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import AnimatedFeature from "./client/AnimatedFeature";
@@ -60,6 +59,14 @@ const TAG_COLORS: Record<string, string> = {
   creative: "bg-orange-500/10 text-orange-600 dark:text-orange-400",
   tech: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
   classic: "bg-amber-500/10 text-amber-700 dark:text-amber-500",
+};
+
+const TAG_LABELS_FR: Record<string, string> = {
+  modern: "Moderne",
+  minimal: "Minimaliste",
+  creative: "Creatif",
+  tech: "Tech",
+  classic: "Classique",
 };
 
 // Mini visual preview of each template style using pure CSS
@@ -310,13 +317,28 @@ const TemplatePreviewCard = ({
   );
 };
 
-const toTemplateNameKey = (templateId: string) =>
-  templateId === "left-right" ? "leftRight" : templateId;
+const TEMPLATE_DISPLAY_NAMES: Record<string, string> = {
+  classic: "Classique",
+  modern: "Moderne",
+  "left-right": "Deux Colonnes",
+  timeline: "Timeline",
+  minimalist: "Minimaliste",
+  elegant: "Elegant",
+  creative: "Creatif",
+  editorial: "Editorial",
+  notion: "Notion",
+  vercel: "Vercel",
+  neobrutalist: "Neobrutalist",
+  gradient: "Degrade",
+  terminal: "Terminal",
+  magazine: "Magazine",
+  compact: "Compact",
+  card: "Cartes",
+  sidebar: "Barre laterale",
+  swiss: "Suisse",
+};
 
 export default function TemplatesShowcase() {
-  const t = useTranslations("home.templatesShowcase");
-  const tDashboard = useTranslations();
-
   return (
     <section className="py-24 md:py-32 bg-secondary/30 dark:bg-secondary/10 overflow-hidden">
       <div className="container mx-auto px-6 max-w-7xl">
@@ -324,14 +346,14 @@ export default function TemplatesShowcase() {
           <div className="text-center mb-16 md:mb-20 max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               <Sparkles className="w-3.5 h-3.5" />
-              {t("badge")}
+              {"18 modeles disponibles"}
             </div>
             <h2 className="text-4xl md:text-5xl font-serif font-semibold tracking-tight text-foreground/90 mb-6 text-balance">
-              {t("title")}
+              {"Des modeles pour chaque metier"}
             </h2>
             <div className="w-20 h-1 bg-primary/20 mx-auto rounded-full mb-8" />
             <p className="text-lg md:text-xl text-muted-foreground/80 font-light leading-relaxed text-pretty">
-              {t("subtitle")}
+              {"Du classique au neobrutaliste, choisissez le style qui vous correspond. Tous les modeles sont entierement personnalisables."}
             </p>
           </div>
         </AnimatedFeature>
@@ -340,18 +362,17 @@ export default function TemplatesShowcase() {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 md:gap-6 mb-16">
             {DEFAULT_TEMPLATES.map((template) => {
               const tagKey = TEMPLATE_TAG_KEYS[template.id as TemplateStyle] || "modern";
-              const nameKey = toTemplateNameKey(template.id);
-              const translatedName = tDashboard(`dashboard.templates.${nameKey}.name`);
+              const displayName = TEMPLATE_DISPLAY_NAMES[template.id] || template.id;
               return (
                 <div key={template.id} className="relative">
                   <span
                     className={`absolute -top-2 -right-2 z-10 text-[10px] font-semibold px-2 py-0.5 rounded-full ${TAG_COLORS[tagKey]}`}
                   >
-                    {t(`tags.${tagKey}`)}
+                    {TAG_LABELS_FR[tagKey]}
                   </span>
                   <TemplatePreviewCard
                     templateId={template.id}
-                    name={translatedName}
+                    name={displayName}
                     accentColor={template.colorScheme.primary}
                   />
                 </div>
@@ -367,7 +388,7 @@ export default function TemplatesShowcase() {
                 size="lg"
                 className="rounded-2xl h-14 px-10 text-base font-medium shadow-xl shadow-primary/20 hover:shadow-primary/30 active:scale-95 transition-all group"
               >
-                {t("cta")}
+                {"Explorer tous les modeles"}
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </GoDashboard>
